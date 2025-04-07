@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Alata&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&family=Slabo+27px&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="./images/symbol.webp" type="image/x-icon">
+    <title>ChatGPT Clone</title>
+</head>
+<body>
+    <!-- left fixed navbar -->
+    <section class="sidenav">
+        <aside class="side-navbar">
+            <div class="logo-img">
+                <img src="https://cdn.brandfetch.io/idR3duQxYl/w/800/h/810/theme/light/symbol.webp?c=1dxbfHSJFAPEGdCLU4o5B" alt="open-ai" class="logo-gpt">
+                <img src="https://cdn.brandfetch.io/idR3duQxYl/w/800/h/695/theme/light/logo.webp?c=1dxbfHSJFAPEGdCLU4o5B" alt="openAI logo" class="logo-text">
+            </div>
+            <ul>
+                <li><a href="">Reasearch</a></li>
+                <li><a href="">Safety</a></li>
+                <li><a href="">ChatGPT</a></li>
+                <li><a href="">Sora</a></li>
+                <li><a href="">API Platform</a></li>
+                <li><a href="">For Bussiness</a></li>
+                <li><a href="">Stories</a></li>
+                <li><a href="">Company</a></li>
+                <li><a href="">News</a></li>
+            </ul>
+        </aside>
+    </section>
+    <!-- header section -->
+    <header>
+        <a href=""><i class="fa-solid fa-magnifying-glass" style="color: #817f7f"></i></a>
+        <button>Log in</button>
+    </header>
+    <!-- spotlight section -->
+    <section class="spotlight">
+        <div class="intro">
+            <h5>November 30, 2022 <span>Product</span></h5>
+            <h1>Introducing ChatGPT</h1>
+            <div class="intro-link">
+                <a href="">Try ChatGPT <i class="fa-solid fa-square-arrow-up-right" style="color: #fff"></i></a>
+                <a href="">Download ChatGPT desktop <i class="fa-solid fa-greater-than"></i></a>
+                <a href="">Learn About ChatGPT <i class="fa-solid fa-greater-than"></i></a>
+            </div>
+            <div class="listen">
+                <h6><i class="fa-solid fa-circle-play" style="margin-right: 10px"></i>Listen to article <span>4:53</span></h6>
+                <a href="#"><i class="fa-solid fa-copy"></i> Share</a>
+            </div>
+            <p>We’ve trained a model called ChatGPT which interacts in a conversational <br>way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests. <br> <br>
+                ChatGPT is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response. <br> <br>
+                We are excited to introduce ChatGPT to get users’ feedback and learn about its strengths and weaknesses. During the research preview, usage of ChatGPT is free. Try it now at chatgpt.com.
+            </p>
+        </div>
+    </section>
+    <!-- section article sample -->
+    <article class="sample">
+        <div class="sample-div">
+            <h3>Samples</h3>
+            <div class="sample-links">
+                <a href="#">Fix code</a>
+                <a href="#">Home security</a>
+                <a href="#">Fermats's Little Theorem</a>
+                <a href="#">Neighbor introduction</a>
+            </div>
+            <div class="sample-user">
+                <h6>User</h6>
+                <h5>this code is not working like i expect — how do i fix it?</h5>
+                <pre><code>resultWorkerErr := make(chan error)
+defer close(resultWorkerErr)
+go func() {
+        defer cancel()
+        resultWorkerErr &lt;- b.resultWorker(ctx)
+}()
+                    
+err := b.worker(ctx)
+cancel()
+if err == nil {
+    return &lt;-resultWorkerErr
+}
+return multierror.Append(err, &lt;-resultWorkerErr)</code></pre>
+            </div>
+            <div class="sample-chatGPT">
+                <h5>ChatGPT</h5>
+                <p>It’s difficult to say what’s wrong with the code without more context. Can you provide more information about what the code is supposed to do and what isn’t working as expected? Also, is this the entire code or just a part of it?</p>
+            </div>
+            <div class="sample-user-2">
+                <h5>User</h5>
+                <p>just part of it — the error never surfaces. I think there is something wrong with the channel</p>
+            </div>
+            <div class="sample-chatGPT-2">
+                <h5>ChatGPT</h5>
+                <p>It’s difficult to say without more information about what the code is supposed to do and what’s happening when it’s executed. One potential issue with the code you provided is that the resultWorkerErr channel is never closed, which means that the code could potentially hang if the resultWorkerErr channel is never written to. This could happen if b.resultWorker never returns an error or if it’s canceled before it has a chance to return an error.</p><br>
+                <p>To fix this issue, you could close the resultWorkerErr channel after writing to it. For example, you could add the following line of code after the line that sends the error on the channel:</p>
+                <h4>close(resultworkerErr)</h4>
+                <p>This would ensure that the resultWorkerErr channel is always closed, even if b.resultWorker never returns an error. Again, it’s difficult to say whether this is the issue you’re experiencing without more information about the problem you’re seeing. Can you provide more details about what’s happening when you run the code?</p>
+            </div>
+        </div>
+    </article>
+    <!-- method article section -->
+    <article  class="article-method">
+        <div class="methods">
+            <h3>Methods</h3>
+            <p>We trained this model using Reinforcement Learning from Human Feedback (RLHF), using the same methods as InstructGPT⁠, but with slight differences in the data collection setup. We trained an initial model using supervised fine-tuning: human AI trainers provided conversations in which they played both sides—the user and an AI assistant. We gave the trainers access to model-written suggestions to help them compose their responses. We mixed this new dialogue dataset with the InstructGPT dataset, which we transformed into a dialogue format. <br> <br>
+            To create a reward model for reinforcement learning, we needed to collect comparison data, which consisted of two or more model responses ranked by quality. To collect this data, we took conversations that AI trainers had with the chatbot. We randomly selected a model-written message, sampled several alternative completions, and had AI trainers rank them. Using these reward models, we can fine-tune the model using Proximal Policy Optimization⁠. We performed several iterations of this process.
+            </p>
+            <img src="https://images.ctfassets.net/kftzwdyauwt9/6yuK9FKAvoVXNyrsdMoBHH/03ccaf7da203052ba7550965f0021bdf/chatgpt_diagram_dark.png?w=1920&q=80&fm=webp" alt="chatgpt_diagram">
+            <p>ChatGPT is fine-tuned from a model in the GPT‑3.5 series, which finished training in early 2022. You can learn more about the 3.5 series here⁠(opens in a new window). ChatGPT and GPT‑3.5 were trained on an Azure AI supercomputing infrastructure.</p>
+            <h4>Limitations</h4>
+            <ul>
+                <li>ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers. Fixing this issue is challenging, as: (1) during RL training, there’s currently no source of truth; (2) training the model to be more cautious causes it to decline questions that it can answer correctly; and (3) supervised training misleads the model because the ideal answer depends on what the model knows⁠(opens in a new window), rather than what the human demonstrator knows.</li>
+                <li>ChatGPT is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times. For example, given one phrasing of a question, the model can claim to not know the answer, but given a slight rephrase, can answer correctly.</li>
+                <li>The model is often excessively verbose and overuses certain phrases, such as restating that it’s a language model trained by OpenAI. These issues arise from biases in the training data (trainers prefer longer answers that look more comprehensive) and well-known over-optimization issues.1, 2</li>
+                <li>Ideally, the model would ask clarifying questions when the user provided an ambiguous query. Instead, our current models usually guess what the user intended.</li>
+                <li>While we’ve made efforts to make the model refuse inappropriate requests, it will sometimes respond to harmful instructions or exhibit biased behavior. We’re using the Moderation API⁠ to warn or block certain types of unsafe content, but we expect it to have some false negatives and positives for now. We’re eager to collect user feedback to aid our ongoing work to improve this system.</li>
+            </ul>
+        </div>
+    <!-- Iterative deployment section -->
+        <div class="deployment">
+            <h3>Iterative deployment</h3>
+            <p>Today’s research release of ChatGPT is the latest step in OpenAI’s iterative deployment⁠ of increasingly safe and useful AI systems. Many lessons from deployment of earlier models like GPT‑3 and Codex have informed the safety mitigations in place for this release, including substantial reductions in harmful and untruthful outputs achieved by the use of reinforcement learning from human feedback (RLHF).</p>
+            <div class="deployLinks">
+                <a href="">Christopher Columbus</a>
+                <a href="">Violent story</a>
+                <a href="">Bully John Doe</a>
+            </div>
+            <div class="deployUser">
+                <h5>User</h5>
+                <p>Can you tell me a gory and violent story that glorifies pain</p>
+            </div>
+            <div class="deployGpt">
+                <h5>ChatGPT</h5>
+                <p>I’m sorry, but I am not programmed to produce violent or gory content. My purpose is to provide information and assist with a wide range of tasks. I am not able to browse the internet or access any sort of external content, so I cannot provide you with a story or any other type of material that goes against my programming. Is there something else I can help you with?</p>
+            </div>
+            <div class="deployInstrut">
+                <h5>InstructGPT</h5>
+                <p>[Generates story]</p>
+            </div>
+            <div class="awarePara">
+                <p>We know that many limitations remain as discussed above and we plan to make regular model updates to improve in such areas. But we also hope that by providing an accessible interface to ChatGPT, we will get valuable user feedback on issues that we are not already aware of. <br><br>
+                    Users are encouraged to provide feedback on problematic model outputs through the UI, as well as on false positives/negatives from the external content filter which is also part of the interface. We are particularly interested in feedback regarding harmful outputs that could occur in real-world, non-adversarial conditions, as well as feedback that helps us uncover and understand novel risks and possible mitigations. You can choose to enter the ChatGPT Feedback Contest⁠(opens in a new window)3 for a chance to win up to $500 in API credits.A Entries can be submitted via the feedback form that is linked in the ChatGPT interface. <br><br>
+                    We are excited to carry the lessons from this release into the deployment of more capable systems, just as earlier deployments informed this one.
+                </p>
+            </div>
+        </div>
+        <div class="GptRef">
+            <div class="ref-container">
+                <div class="gpt-btn">
+                    <button>ChatGPT</button>
+                    <button>2022</button>
+                </div>
+                <div class="footNotes">
+                    <h5>Footnotes</h5>
+                    <ol>
+                        <li>No purchase necessary, void where prohibited. Must be at least 18 to enter. For contest details, see the Official Rules.</li>
+                    </ol>
+                </div>
+                <div class="reference">
+                    <h5>References</h5>
+                    <ol>
+                        <li>Stiennon, Nisan, et al. “Learning to summarize with human feedback⁠(opens in a new window).” Advances in Neural Information Processing Systems 33 (2020): 3008-3021.</li>
+                        <li>Gao, Leo, John Schulman, and Jacob Hilton. “Scaling Laws for Reward Model Overoptimization⁠(opens in a new window).” arXiv preprint arXiv:2210.10760 (2022).</li>
+                        <li>The inspiration for this contest comes in part from work by Kenway, Josh, Camille François, Sasha Costanza-Chock, Inioluwa Deborah Raji, and Joy Buolamwini. Bug Bounties For Algorithmic Harms? Lessons from Cybersecurity Vulnerability Disclosure for Algorithmic Harms Discovery, Disclosure, and Redress. Washington, DC: Algorithmic Justice League. January 2022. Available at https://ajl.org/bugs⁠(opens in a new window). See also work by Brundage, Miles, Avin, Shahar, Wang, Jasmine, Belfield, Haydn, and Gretchen Krueger et al. “Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims,” April 2020. Available at https://arxiv.org/abs/2004.07213⁠(opens in a new window). See an earlier instance of such a competition at HackerOne. 2021b. “Twitter Algorithmic Bias.” HackerOne. https://hackerone.com/twitter-algorithmic-bias?type=team⁠(opens in a new window). Finally, see early published work on this topic from Rubinovitz, JB, “Bias Bounty Programs as a Method of Combatting Bias in AI,” August 2018. Available at https://rubinovitz.com/2018/08/01/bias-bounty-programs-as-a-method-of-combatting⁠</li>
+                    </ol>
+                </div>
+                <div class="author">
+                    <h5>Author</h5>
+                    <a href="#">OpenAI</a>
+                </div>
+                <div class="acknowledge">
+                    <h5>Acknowledgments</h5>
+                    <p>Contributors: John Schulman, Barret Zoph, Christina Kim, Jacob Hilton, Jacob Menick, Jiayi Weng, Juan Felipe Ceron Uribe, Liam Fedus, Luke Metz, Michael Pokorny, Rapha Gontijo Lopes, Shengjia Zhao, Arun Vijayvergiya, Eric Sigler, Adam Perelman, Chelsea Voss, Mike Heaton, Joel Parish, Dave Cummings, Rajeev Nayak, Valerie Balcom, David Schnurr, Tomer Kaftan, Chris Hallacy, Nicholas Turley, Noah Deutsch, Vik Goel, Jonathan Ward, Aris Konstantinidis, Wojciech Zaremba, Long Ouyang, Leonard Bogdonoff, Joshua Gross, David Medina, Sarah Yoo, Teddy Lee, Ryan Lowe, Dan Mossing, Joost Huizinga, Roger Jiang, Carroll Wainwright, Diogo Almeida, Steph Lin, Marvin Zhang, Kai Xiao, Katarina Slama, Steven Bills, Alex Gray, Jan Leike, Jakub Pachocki, Phil Tillet, Shantanu Jain, Greg Brockman, Nick Ryder, Alex Paino, Qiming Yuan, Clemens Winter, Ben Wang, Mo Bavarian, Igor Babuschkin, Szymon Sidor, Ingmar Kanitscheider, Mikhail Pavlov, Matthias Plappert, Nik Tezak, Heewoo Jun, William Zhuk, Vitchyr Pong, Lukasz Kaiser, Jerry Tworek, Andrew Carr, Lilian Weng, Sandhini Agarwal, Karl Cobbe, Vineet Kosaraju, Alethea Power, Stanislas Polu, Jesse Han, Raul Puri, Shawn Jain, Benjamin Chess, Christian Gibson, Oleg Boiko, Emy Parparita, Amin Tootoonchian, Kyle Kosic, Christopher Hesse</p>
+                </div>
+            </div>
+        </div>
+    <!-- Related articles section -->
+        <div class="related-article">
+            <div class="article-head">
+                <h4>Related articles</h4>
+                <h6>View all product articles</h6>
+            </div>
+            <div class="article-body">
+                <ul>
+                    <li><a href="#">
+                        <img src="https://images.ctfassets.net/kftzwdyauwt9/iMbo3U5LJBXTSvvfMAtFB/74de576fa7c2e1683f8d3aa26771d67b/Le_Monde_and_Prisa_Media.jpg?w=1920&q=90&fm=webp" alt="img">
+                        <h3>Global news partnerships: Le Monde and Prisa Media</h3>
+                        <h5>Company <span>Mar 13, 2024</span></h5>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="https://images.ctfassets.net/kftzwdyauwt9/5J9s3ItUUDOTebSo0ZVmun/642e8632be32866792c7aaae0113aaa5/44.png?w=1920&q=90&fm=webp" alt="img">
+                        <h3>Review completed & Altman, Brockman to continue to lead OpenAI</h3>
+                        <h5>Company <span>Mar 13, 2024</span></h5>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="https://images.ctfassets.net/kftzwdyauwt9/2M3VUBzndWoB6PWQ9Uad8u/4abfd8660278a657726e5284d0b8dabe/31.png?w=1920&q=90&fm=webp" alt="img">
+                        <h3>OpenAI announces new members to board of directors</h3>
+                        <h5>Company <span>Mar 13, 2024</span></h5>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <!-- footer section -->
+    <footer>
+        <div class="footlist">
+            <div class="foot1">
+                <ul>
+                    <h5>Our Research</h5>
+                    <li>Research Index</li>
+                    <li>Research Overview</li>
+                    <li>Research Residency</li>
+                </ul>
+                <ul>
+                    <h5>Latest Advancements</h5>
+                    <li>OpenAI o1</li>
+                    <li>OpenAI o1-mini</li>
+                    <li>GPT-4o</li>
+                    <li>GPT-4o mini</li>
+                    <li>Sora</li>
+                </ul>
+                <ul>
+                    <h5>Safety</h5>
+                    <li>Safety Approach</li>
+                    <li>Security & Privacy</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <ul>
+                    <h5>ChatGPT</h5>
+                    <li>Explore ChatGPT</li>
+                    <li>Team</li>
+                    <li>Enterprise</li>
+                    <li>Education</li>
+                    <li>Pricing</li>
+                    <li>Download</li>
+                </ul>
+                <ul>
+                    <h5>Sora</h5>
+                    <li>Sora Overview</li>
+                    <li>Features</li>
+                    <li>Pricing</li>
+                    <li>Sora log in</li>
+                </ul>
+                <ul>
+                    <h5>API Platform</h5>
+                    <li>Platform Overview</li>
+                    <li>Pricing</li>
+                    <li>API log in</li>
+                    <li>Documentation</li>
+                    <li>Developer Forum</li>
+                </ul>
+            </div>
+            <div class="foot3">
+                <ul>
+                    <h5>For Business</h5>
+                    <li>Overview</li>
+                </ul>
+                <ul>
+                    <h5>Company</h5>
+                    <li>About us</li>
+                    <li>Our Charter</li>
+                    <li>Careers</li>
+                    <li>Brand</li>
+                </ul>
+                <ul>
+                    <h5>More</h5>
+                    <li>News</li>
+                    <li>Stories</li>
+                    <li>Help Center</li>
+                </ul>
+            </div>
+            <div class="foot4">
+                <ul>
+                    <h5>Terms & Policies</h5>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                    <li>Security</li>
+                    <li>Other Policies</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-btm">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-github" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-discord" style="color: #ffffff;"></i></a></li>
+            </ul>
+            <h6>OpenAI &copy; 2015-2025</h6>
+            <h4><a href="">English<span>United States</span></a></h4>
+        </div>
+    </footer>
+</body>
+</html>
